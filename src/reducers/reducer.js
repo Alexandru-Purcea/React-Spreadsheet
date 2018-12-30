@@ -1,4 +1,3 @@
-// mmm
 export default (
   state = {
     numberOfRows: 10,

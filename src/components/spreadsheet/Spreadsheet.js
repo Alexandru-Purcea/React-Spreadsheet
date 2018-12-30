@@ -84,6 +84,7 @@ class Spreadsheet extends Component {
   };
 
   handleSubmit = event => {
+    event.preventDefault();
     let { columnTitle, cellsType, required, columnCounter } = this.state;
     let select = this.state.select;
     if (select.active) {
@@ -108,22 +109,23 @@ class Spreadsheet extends Component {
         required: this.state.required
       });
     }
-    event.preventDefault();
-    columns.push(this.state.columnTitle);
-    let counter = this.state.columnCounter;
-    counter++;
-    this.setState({
-      initial: false,
-      required: false,
-      columnCounter: counter,
-      newColumn: false,
-      columnTitle: "",
-      cellsType: "date",
-      select: {
-        ...this.state.select,
-        active: false
-      }
-    });
+    if (!select.active || select.options[0]) {
+      columns.push(this.state.columnTitle);
+      let counter = this.state.columnCounter;
+      counter++;
+      this.setState({
+        initial: false,
+        required: false,
+        columnCounter: counter,
+        newColumn: false,
+        columnTitle: "",
+        cellsType: "date",
+        select: {
+          ...this.state.select,
+          active: false
+        }
+      });
+    }
   };
   render() {
     let state = this.state;
