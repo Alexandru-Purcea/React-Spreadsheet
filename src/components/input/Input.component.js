@@ -29,7 +29,7 @@ class Input extends Component {
       index: this.state.index,
       value: event.target.value
     });
-    if (event.target.value !== "") {
+    if (event.target.value !== "" && document.getElementById(this.state.lastId)) {
       document.getElementById(this.state.lastId).style.borderColor = "#e0e0e0";
     }
   };
