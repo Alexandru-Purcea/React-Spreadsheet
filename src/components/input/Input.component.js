@@ -52,41 +52,46 @@ class Input extends Component {
     let store = props.reducer;
     let index = props.index;
     let value = store[props.id].rows[index];
-    if (props.active && props.type !== "select") {
-      return (
-        <input
-          onBlur={this.checkInput}
-          className={store[props.id].id}
-          id={store[props.id].id + index}
-          type={props.type}
-          value={value}
-          onChange={this.handleChange}
-          onClick={() => this.handleClick(index)}
-        />
-      );
-    } else if (props.active && props.type === "select") {
-      return (
-        <select
-          id={store[props.id].id + index}
-          onBlur={this.checkInput}
-          value={value}
-          onChange={this.handleChange}
-          onClick={() => this.handleClick(index)}
-        >
-          {props.components}
-        </select>
-      );
-    } else {
-      return (
-        <input
-          className={"deactivatedColumn"}
-          id={store[props.id].id + index}
-          onChange={() => {}}
-          type={"text"}
-          value={""}
-        />
-      );
+
+    const { active, type } = this.props;
+
+    if (active) {
+      if (type === "select") {
+        return (
+          <select
+            id={store[props.id].id + index}
+            onBlur={this.checkInput}
+            value={value}
+            onChange={this.handleChange}
+            onClick={() => this.handleClick(index)}
+          >
+            {props.components}
+          </select>
+        );
+      } else {
+        return (
+          <input
+            onBlur={this.checkInput}
+            className={store[props.id].id}
+            id={store[props.id].id + index}
+            type={props.type}
+            value={value}
+            onChange={this.handleChange}
+            onClick={() => this.handleClick(index)}
+          />
+        );
+      }
     }
+
+    return (
+      <input
+        className={"deactivatedColumn"}
+        id={store[props.id].id + index}
+        onChange={() => {}}
+        type={"text"}
+        value={""}
+      />
+    );
   }
 }
 
