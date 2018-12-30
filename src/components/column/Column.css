@@ -1,0 +1,51 @@
+.columnContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  height: 30px;
+  box-sizing: border-box;
+}
+select {
+  height: 30px;
+}
+.IndexColumn {
+  margin-left: 130px;
+  cursor: default;
+  color: transparent;
+  text-shadow: 0 0 0 rgb(86, 86, 86);
+}
+.IndexColumn:focus {
+  outline: none;
+  text-decoration: none;
+}
+.deactivatedColumn {
+  cursor: default;
+  color: transparent;
+  text-shadow: 0 0 0 rgb(86, 86, 86);
+}
+.deactivatedColumn:focus {
+  outline: none;
+  text-decoration: none;
+}
+.filterButton {
+  width: 100%;
+}
+#filterCheckbox {
+  margin: 24px;
+  height: 14px;
+  width: 48px;
+}
+
+.filterNumber {
+  width: 70px;
+}
+
+.filterDate {
+  width: 158px;
+}
+.dateFilterContainer {
+  display: flex;
+  flex-direction: column;
+}

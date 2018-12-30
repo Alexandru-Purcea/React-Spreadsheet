@@ -1,0 +1,62 @@
+#spreadsheetContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+#createColumnForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#createColumnContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 105px;
+  justify-content: center;
+  margin-left: 30px;
+}
+
+#createColumnContainer label {
+  margin: 10px auto;
+}
+
+#createColumnContainer label input {
+  margin-left: 10px;
+  width: 165px;
+}
+#createColumnContainer label select {
+  margin-left: 10px;
+  width: 131px;
+}
+
+button {
+  margin-top: 20px;
+  height: 30px;
+}
+
+#optionsInput {
+  width: 107px !important;
+  margin: 10px auto;
+}
+
+#newColumnButton {
+  height: 32px;
+  margin: auto 20px;
+}
+
+.flex {
+  display: flex;
+}
+
+input {
+  border-width: 1px;
+  text-align: center;
+  border-color: rgb(224, 224, 224);
+}
+
+#requiredCheckbox {
+  width: 132px !important;
+  height: 16px;
+}
